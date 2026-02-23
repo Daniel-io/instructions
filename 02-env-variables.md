@@ -214,3 +214,77 @@ module.exports = {
 };
 
 ```
+
+
+
+<!-- ES6 -->
+```js
+
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
+
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+import webpack from 'webpack';
+import dotenv from 'dotenv';
+
+// Needed because __dirname doesn't exist in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Reads your .env file and parses it into an object you can use
+const env = dotenv.config().parsed || {};
+
+// Format variables for DefinePlugin
+const envKeys = Object.keys(env).reduce((prev, next) => {
+  prev[`process.env.${next}`] = JSON.stringify(env[next]);
+  return prev;
+}, {});
+
+export default {
+  mode: 'development', // or 'production'
+  entry: './src/js/index.js', //change for actual entry
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    clean: true, 
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        },
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'], // Use CSS and Style loaders to bundle CSS
+      },
+    ],
+  },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
+    compress: true,
+    port: 9000,
+    open: true,
+    watchFiles: ['src/**/*'],
+  },
+  plugins: [
+    new webpack.DefinePlugin(envKeys),
+    new HtmlWebpackPlugin({
+      template: './src/index.html' // professional: source HTML
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'public', to: 'public' } // copy everything from root public/ to dist/public/
+      ]
+    })
+  ]
+};
+
+```
