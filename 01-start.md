@@ -338,7 +338,7 @@ PURPOSE: You can import CSS in JS and it works via bundle.js.
 
 
 NOTE: Make sure entry point is correct in webpack file:  EX: entry: './src/js/index.js',
-NOTE: Add to watch all src files:     watchFiles: ['src/**/*'],
+NOTE: Add to watch all src files:     watchFiles: ['src/**/*'], inside devServer {}
 
 Import CSS in JavaScript:
 Import the CSS file into your JavaScript entry point (src/index.js):
@@ -420,6 +420,11 @@ And import them in webpack config
 ```js
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+
+
+
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 ```
 
 
