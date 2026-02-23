@@ -139,7 +139,7 @@ const __dirname = path.dirname(__filename);
 
 export default {
   mode: 'development', // or 'production'
-  entry: './src/js/controller/index.js',
+  entry: './src/js/controller/index.js', // your main JS file
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
