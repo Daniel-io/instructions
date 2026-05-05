@@ -464,10 +464,11 @@ project/
 
 
 DONT FORGET:
-REFERENCE bundle.js instead of script in index.html
+REFERENCE bundle.js instead of script in index.html 
+<!-- May be done automatically by webpack -->
 
 
-
+NOTE: after this you can test server, create src folder with index.html js/index.js css/style.css and run server
 
 
 
