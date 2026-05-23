@@ -181,7 +181,7 @@ export default {
 
 ---
 
-### 2️⃣ `module.exports = { ... }`
+### 2️⃣ `module.exports = { ... }` / 'export default'
 
 * Exports the Webpack configuration object.
 * Webpack reads this when you run `webpack` or `webpack serve`.
@@ -621,3 +621,9 @@ CSS processing
 | Minify CSS                   | `css-minimizer-webpack-plugin` (used in production mode) |
 | Extract CSS to separate file | `mini-css-extract-plugin` (instead of style-loader)      |
 | Autoprefix CSS               | `postcss-loader` + `autoprefixer`                        |
+
+
+
+
+
+<!-- QUICK START SHORTCUT  -->
