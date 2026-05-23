@@ -595,14 +595,15 @@ export default {
     watchFiles: ['src/**/*'],
   },
   plugins: [
+    new webpack.DefinePlugin(envKeys), // 🔥 Add this line to inject env variables
     new HtmlWebpackPlugin({
       template: './src/index.html'
     }),
-    // new CopyWebpackPlugin({
-    //   patterns: [
-    //    { from: 'public', to: 'public' } // copy everything from root public/ to dist/public/
-    //   ]
-    // })
+    new CopyWebpackPlugin({
+      patterns: [
+       { from: 'public', to: 'public' } // copy everything from root public/ to dist/public/
+      ]
+    })
   ]
 };
 ```
