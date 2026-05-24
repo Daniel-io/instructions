@@ -145,3 +145,9 @@ describe('basic DOM test', () => {
 
 
 ```
+
+
+
+If error when testing files with dom elements add in pakage.json
+
+"test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
