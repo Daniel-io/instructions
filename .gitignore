@@ -1,0 +1,53 @@
+# Node dependencies
+node_modules/
+
+
+
+# Build output
+# Ignore all contents of dist/ (star is not needed if dist dynamically generated)
+dist/
+
+
+
+build/
+coverage/
+
+
+
+
+# Ignore real env files
+.env
+.env.*
+
+# But keep example template
+!.env.example
+
+
+
+
+# Optional: log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+*.cache
+*.local
+
+
+
+
+# Optional: OS-specific junk
+.DS_Store
+Thumbs.db
+
+
+
+
+# 🧠 Editor & IDE Files
+.vscode/
+.idea/
+.history/
+
+
+
+
