@@ -6,7 +6,7 @@ npm install --save-dev babel-loader @babel/core @babel/preset-env webpack webpac
 npm install --save-dev style-loader css-loader
 npm install --save-dev html-webpack-plugin
 npm install --save-dev copy-webpack-plugin
-
+npm install dotenv --save-dev
 
 
 
@@ -29,4 +29,3 @@ add commands in package.json
 
 
 
-npm install dotenv --save-dev
