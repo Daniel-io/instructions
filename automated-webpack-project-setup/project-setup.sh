@@ -10,10 +10,10 @@ echo "📦 Initializing npm project..."
 npm init -y
 
 echo "📥 Installing runtime dependencies..."
-npm install express dotenv
+npm install express dotenv cors
 
 echo "🛠 Installing dev dependencies..."
-npm install --save-dev \
+npm install -D \
   babel-loader \
   @babel/core \
   @babel/preset-env \
@@ -25,7 +25,8 @@ npm install --save-dev \
   html-webpack-plugin \
   copy-webpack-plugin \
   vitest \
-  jsdom
+  jsdom 
+  
 
 echo "⚙️ Creating Babel config..."
 cat > .babelrc <<'EOF'

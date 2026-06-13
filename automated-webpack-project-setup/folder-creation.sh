@@ -21,7 +21,8 @@ touch \
   src/app/index.html \
   src/app/js/index.js \
   src/app/css/style.css \
-  src/app/js/test/sanity.test.js
+  src/app/js/test/sanity.test.js \
+  server/server.js
 
 # Create index.html content
 cat > src/app/index.html <<'EOF'
@@ -190,6 +191,24 @@ Thumbs.db
 .vscode/
 .idea/
 .history/
+EOF
+
+
+cat > server/server.js <<'EOF'
+// Creates your Express app instance
+import express from "express";
+
+const app = express();
+
+// This line enables JSON body parsing for incoming requests.
+app.use(express.json());
+
+const PORT = process.env.PORT || 3000;
+
+// Sanity check
+app.get("/", (req, res) => res.send("Server running!"));
+
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 EOF
 
 echo "✅ Folder structure created successfully!"
