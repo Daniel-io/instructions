@@ -198,6 +198,8 @@ cat > server/server.js <<'EOF'
 // Creates your Express app instance
 import express from "express";
 
+dotenv.config();
+
 const app = express();
 
 // This line enables JSON body parsing for incoming requests.
