@@ -198,6 +198,7 @@ EOF
 cat > server/server.js <<'EOF'
 // Creates your Express app instance
 import express from "express";
+import dotenv from "dotenv";
 
 dotenv.config();
 
