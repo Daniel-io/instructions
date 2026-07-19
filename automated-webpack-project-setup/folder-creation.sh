@@ -22,7 +22,8 @@ touch \
   src/app/js/index.js \
   src/app/css/style.css \
   src/app/js/test/sanity.test.js \
-  server/server.js
+  server/server.js \
+  public/index.html
 
 # Create index.html content
 cat > src/app/index.html <<'EOF'
